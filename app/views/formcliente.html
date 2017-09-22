@@ -1,0 +1,71 @@
+<div>
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <div class="row">
+              <label for="first_name">Nombre</label>
+            </div>
+            <input type="text" class="validate" ng-model="userModel.nombre"> 
+          </div>
+          <div class="input-field col s12">
+            <div class="row">
+              <label for="email">Email</label>
+            </div>
+            <input type="text" class="validate" ng-model="userModel.email">
+          </div>
+          <div class="input-field col s12">
+            <div class="row">
+              <label for="phone">Telefono</label>
+            </div>
+            <input type="text" class="validate" ng-model="userModel.telefono">
+          </div>
+          </div>
+          <div class="col s12">
+             <div class="row">
+                <button class="btn waves-effect waves-light" ng-click="enviar(userModel)">Submit
+                  <i class="material-icons right">send</i>
+                </button>
+              </div>  
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <table class="responsive-table" >
+      <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th></th>
+            <th></th>
+        </tr>
+      </thead>
+      <tbody ng-repeat=" x in users">
+        <tr>
+          <td>{{x.nombre}}</td>
+          <td>{{x.email}}</td>
+          <td>{{x.telefono}}</td>
+          <td>
+            <a class="waves-effect waves-light btn" ng-click="actualizar($index,userModel)">Actualizar</a>
+          </td>
+          <td>
+            <a class="waves-effect waves-light btn" ng-click="eliminar($index)">Eliminar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--{{$index + 1}}-->

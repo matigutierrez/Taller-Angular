@@ -1,0 +1,63 @@
+
+<div>
+	<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <div class="row">
+            <label for="first_name">First Name</label>
+          </div>
+          <input type="text" class="validate" ng-model="nombre"> 
+        </div>
+        <div class="input-field col s6">
+          <div class="row">
+            <label for="last_name">Last Name</label>
+          </div>
+          <input type="text" class="validate" ng-model="apellido">
+        </div>
+        <div class="input-field col s6">
+          <div class="row">
+            <label for="image">Imagen</label>
+          </div>
+          <input type="text" class="validate" ng-model="imagen">
+        </div>
+        <div class="switch col s6">
+          	<p>
+	      		<input type="checkbox" id="test5" ng-model="bool" />
+	      		<label for="test5">Vivo</label>
+	    	</p>
+        </div>
+        <div class="col s12">
+           <div class="row">
+              <button class="btn waves-effect waves-light" ng-click="cargar()">Submit
+                <i class="material-icons right">send</i>
+              </button>
+            </div>  
+        </div>
+      </div>
+    </form>
+  </div>
+    <div class="row">
+		<div class="container">
+		    <div class="col s6" ng-repeat=" x in users | orderBy:'nombre' ">
+		        <div class="card-panel grey lighten-5 z-depth-1">
+		          <div class="row valign-wrapper">
+		            <div class="col s3">
+		              <img src="{{x.imagen}}" alt="" class="circle responsive-img">
+		            </div>
+		            <div class="col s10">
+		              <span class="black-text">
+		                {{x.nombre}}
+		                {{x.apellido}}
+		                <div ng-switch="x.vivo">
+                        <div ng-switch-when="true"><h4>Vivo</h4></div>
+                        <div ng-switch-when="false"><h4>Muerto</h4></div>
+                    </div>
+		              </span>
+		            </div>
+		          </div>
+		        </div>
+		    </div>
+		</div>
+	</div>	
+</div>
