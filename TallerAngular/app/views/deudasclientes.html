@@ -1,0 +1,39 @@
+<!--muestro las deudas de los clientes en una tabla-->
+<div class="container">
+  <center>
+    <h4>Capital Actual:</h4>
+    <h1>{{monto}}</h1>
+  </center>
+</div>
+<div class="container">
+  <table class="responsive-table" >
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Telefono</th>
+        <th>Prestamo</th>
+        <th>Total Pagar</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody ng-repeat=" x in deudores ">
+      <tr>
+        <td>{{x.cliente.nombre}}</td>
+        <td>{{x.cliente.email}}</td>
+        <td>{{x.cliente.telefono}}</td>
+        <td>${{x.prestamos}}</td>
+        <td>${{x.total}}</td>
+        <td>
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">  
+                <a class="waves-effect waves-light btn" ng-click="pagar($index)">Pagar</a>
+              </div>
+            </div>
+          </form>  
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

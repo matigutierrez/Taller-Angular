@@ -1,0 +1,19 @@
+img{
+	height: 35px;
+	width: 35px
+}
+th{
+	width: 200px;
+}
+.boton{
+	background-color: red;
+}
+h1{
+	font-family: 'Lato', sans-serif;
+}
+.fond{
+	background-color: #A4A4A4;
+}
+.mar{
+	margin-top: 10px;
+}
